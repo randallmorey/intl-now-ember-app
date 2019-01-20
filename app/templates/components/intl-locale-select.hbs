@@ -1,0 +1,12 @@
+<XSelect @name='language' @value={{language}} @on-change={{action "selectLanguage"}} @required={{true}} as |xs|>
+  <xs.option @value="en">en</xs.option>
+  <xs.option @value="es">es</xs.option>
+</XSelect>
+
+-
+
+<XSelect @name='country' @value={{country}} @on-change={{action "selectCountry"}} as |xs|>
+  <xs.option @value={{null}}>None</xs.option>
+  <xs.option @value="US">US</xs.option>
+  <xs.option @value="BR">BR</xs.option>
+</XSelect>
