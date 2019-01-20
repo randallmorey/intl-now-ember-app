@@ -12,5 +12,11 @@ export default Component.extend({
     const formatter = new Intl.NumberFormat(locale,
       {style: 'currency', currency: this.currency});
     return formatter.format(this.numberValue);
+  }),
+
+  code: computed('locale', 'currency', 'numberValue', 'formatted', function () {
+    return `const formatter = new Intl.NumberFormat('${this.locale}', {style: 'currency', currency: '${this.currency}'});
+formatter.format(${this.numberValue});
+// ${this.formatted}`
   })
 });

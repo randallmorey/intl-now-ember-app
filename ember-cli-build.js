@@ -6,6 +6,11 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     sassOptions: {
       extension: 'sass'
+    },
+    'ember-prism': {
+      'theme': 'okaidia',
+      'components': ['javascript'],
+      'plugins': ['line-numbers']
     }
   });
 

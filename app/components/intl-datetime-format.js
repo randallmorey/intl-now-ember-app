@@ -28,4 +28,13 @@ export default Component.extend({
     this.set('now', new Date());
     this.updateNow.perform();
   }).drop(),
+
+  code: computed('locale', 'timezone', function () {
+    return `const formatter = new Intl.DateTimeFormat('${this.locale}', {
+  year: 'numeric', month: 'long', day: 'numeric',
+  hour: 'numeric', minute: 'numeric', second: 'numeric',
+  timeZone: '${this.timezone}'});
+formatter.format(new Date());
+// ${this.formatted}`
+  })
 });
