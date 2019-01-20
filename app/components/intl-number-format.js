@@ -6,7 +6,7 @@ export default Component.extend({
 
   numberValue: 12345678.56789,
 
-  formattedNumber: computed('numberValue', 'locale', function () {
+  formatted: computed('numberValue', 'locale', function () {
     const locale = this.locale;
     const formatter = new Intl.NumberFormat(locale);
     return formatter.format(this.numberValue);
