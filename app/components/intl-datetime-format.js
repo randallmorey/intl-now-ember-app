@@ -1,12 +1,11 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
-
-const now = new Date();
+import { task, timeout } from 'ember-concurrency';
 
 export default Component.extend({
   locale: 'en-US',
-  now: computed(function () { return new Date(); }),
-  timezone: 'America/New_York' ,
+  now: Object.freeze(new Date()),
+  timezone: 'America/New_York',
 
   formatted: computed('locale', 'now', 'timezone', function () {
     const locale = this.locale;
@@ -16,6 +15,17 @@ export default Component.extend({
       year: 'numeric', month: 'long', day: 'numeric',
       hour: 'numeric', minute: 'numeric', second: 'numeric',
       timeZone: timezone});
-    return formatter.format(this.now);
-  })
+    return formatter.format(now);
+  }),
+
+  didRender() {
+    this._super(...arguments);
+    this.updateNow.perform();
+  },
+
+  updateNow: task(function * () {
+    yield timeout(1000);
+    this.set('now', new Date());
+    this.updateNow.perform();
+  }).drop(),
 });
