@@ -1,11 +1,2 @@
-index
-controller locale: "{{locale}}"
-
 <IntlLocaleSelect @locale={{locale}} />
-
-<hr>
-There are 1,000,000 English speakers in Antarctica.
-<hr>
-
-{{input type='number' value=numberValue}}
-<strong>{{formattedNumber}}</strong>
+<IntlNumberFormat @locale={{locale}} />
