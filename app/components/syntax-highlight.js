@@ -1,6 +1,7 @@
 /* global Prism */
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
 
 export default Component.extend({
   classNameBindings: ['languageClass'],
@@ -20,6 +21,6 @@ export default Component.extend({
     const grammar = Prism.languages[this.get('language')];
     if (!grammar) return '';
 
-    return Prism.highlight(code, grammar);
+    return htmlSafe(Prism.highlight(code, grammar));
   })
 });
