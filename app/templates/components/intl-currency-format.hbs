@@ -1,14 +1,21 @@
-{{input type="number" value=numberValue}}
-<XSelect name="currency" @value={{currency}} @on-change={{action (mut currency)}} @required={{true}} as |xs|>
-  <xs.option @value="USD">USD (US Dollar)</xs.option>
-  <xs.option @value="EUR">EUR (Euro)</xs.option>
-  <xs.option @value="INR">INR (Indian Rupee)</xs.option>
-  <xs.option @value="GBP">GBP (UK Pound Sterling)</xs.option>
-  <xs.option @value="BRL">BRL (Brazilian Real)</xs.option>
-  <xs.option @value="CNY">CNY (Yuan Renminbi)</xs.option>
-  <xs.option @value="JPY">JPY (Yen)</xs.option>
-</XSelect>
+<form>
+  <label for="currencyValue">Enter a number:</label>
+  {{input name="currencyValue" type="number" value=numberValue}}
 
-<strong>{{formatted}}</strong>
+  <label for="currency" class="sr-only">Choose a currency:</label>
+  <XSelect name="currency" @value={{currency}} @on-change={{action (mut currency)}} @required={{true}} as |xs|>
+    <xs.option @value="USD">USD (US Dollar)</xs.option>
+    <xs.option @value="EUR">EUR (Euro)</xs.option>
+    <xs.option @value="INR">INR (Indian Rupee)</xs.option>
+    <xs.option @value="GBP">GBP (UK Pound Sterling)</xs.option>
+    <xs.option @value="BRL">BRL (Brazilian Real)</xs.option>
+    <xs.option @value="CNY">CNY (Yuan Renminbi)</xs.option>
+    <xs.option @value="JPY">JPY (Yen)</xs.option>
+  </XSelect>
+</form>
+
+<div class="result-frame">
+  <strong>{{formatted}}</strong>
+</div>
 
 {{syntax-highlight code=code}}

@@ -1,4 +1,10 @@
-{{input type="number" value=numberValue}}
-<strong>{{formatted}}</strong>
+<form>
+  <label for="numberValue">Enter a number:</label>
+  {{input class="numberValue" type="number" value=numberValue}}
+</form>
+
+<div class="result-frame">
+  <strong>{{formatted}}</strong>
+</div>
 
 {{syntax-highlight code=code}}
