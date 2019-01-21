@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 export default Component.extend({
   locale: 'en-US',
 
-  numberValue: 12345678.56789,
+  numberValue: 45006755.56789,
 
   formatted: computed('numberValue', 'locale', function () {
     const locale = this.locale;

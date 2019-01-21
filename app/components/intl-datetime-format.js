@@ -33,7 +33,8 @@ export default Component.extend({
     return `const formatter = new Intl.DateTimeFormat('${this.locale}', {
   year: 'numeric', month: 'long', day: 'numeric',
   hour: 'numeric', minute: 'numeric', second: 'numeric',
-  timeZone: '${this.timezone}'});
+  timeZone: '${this.timezone}'
+});
 formatter.format(new Date());
 // ${this.formatted}`
   })

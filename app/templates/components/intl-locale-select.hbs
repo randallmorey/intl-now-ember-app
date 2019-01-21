@@ -1,11 +1,28 @@
-<XSelect name="locale" @value={{locale}} @on-change={{action (mut locale)}} @required={{true}} as |xs|>
-  <xs.option @value="ar-AE">ar-AE (Arabic, U.A.E.)</xs.option>
-  <xs.option @value="en-GB">en-GB (English, United Kingdom)</xs.option>
-  <xs.option @value="en-US">en-US (English, United States)</xs.option>
-  <xs.option @value="es-ES">es-ES (Spanish, Spain)</xs.option>
-  <xs.option @value="es-US">es-US (Spanish, United States)</xs.option>
-  <xs.option @value="hi-IN">hi-IN (Hindi, India)</xs.option>
-  <xs.option @value="pt-BR">pt-BR (Portuguese, Brazil)</xs.option>
-  <xs.option @value="pt-PT">pt-PT (Portuguese, Portugal)</xs.option>
-  <xs.option @value="th-TH-u-nu-thai">th-TH-u-nu-thai (Thai, Thailand, Thai numbering system)</xs.option>
-</XSelect>
+<form>
+  <label for="locale">First, select a target locale</label>
+  <br>
+  <XSelect name="locale" @value={{locale}} @on-change={{action (mut locale)}} @required={{true}} as |xs|>
+    <xs.option @value="ar-AE">ar-AE</xs.option>
+    <xs.option @value="en-GB">en-GB</xs.option>
+    <xs.option @value="en-US">en-US</xs.option>
+    <xs.option @value="es-ES">es-ES</xs.option>
+    <xs.option @value="es-US">es-US</xs.option>
+    <xs.option @value="hi-IN">hi-IN</xs.option>
+    <xs.option @value="pt-BR">pt-BR</xs.option>
+    <xs.option @value="pt-PT">pt-PT</xs.option>
+    <xs.option @value="th-TH-u-nu-thai">th-TH-u-nu-thai</xs.option>
+  </XSelect>
+  <br>
+  <strong>English, United States</strong>
+</form>
+
+<!--
+ (Arabic, U.A.E.)
+(English, United Kingdom)
+(English, United States)
+(Spanish, Spain)
+(Spanish, United States)
+(Hindi, India)
+(Portuguese, Brazil)
+(Portuguese, Portugal)
+(Thai, Thailand, Thai numbering system)

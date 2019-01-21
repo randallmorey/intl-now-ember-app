@@ -5,7 +5,7 @@ export default Component.extend({
   locale: 'en-US',
 
   currency: 'USD',
-  numberValue: 12345678.56789,
+  numberValue: 45006755.56789,
 
   formatted: computed('locale', 'currency', 'numberValue', function () {
     const locale = this.locale;
@@ -15,7 +15,10 @@ export default Component.extend({
   }),
 
   code: computed('locale', 'currency', 'numberValue', 'formatted', function () {
-    return `const formatter = new Intl.NumberFormat('${this.locale}', {style: 'currency', currency: '${this.currency}'});
+    return `const formatter = new Intl.NumberFormat('${this.locale}', {
+  style: 'currency',
+  currency: '${this.currency}'
+});
 formatter.format(${this.numberValue});
 // ${this.formatted}`
   })
