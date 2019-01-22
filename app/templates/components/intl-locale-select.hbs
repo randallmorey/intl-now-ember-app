@@ -2,7 +2,7 @@
   <label for="locale">First, select a target locale</label>
   <br>
   <XSelect name="locale" @value={{locale}} @on-change={{action (mut locale)}} @required={{true}} as |xs|>
-    <xs.option @value="ar-AE">ar-AE</xs.option>
+    <xs.option @value="ar-AE-u-nu-arab">ar-AE</xs.option>
     <xs.option @value="en-GB">en-GB</xs.option>
     <xs.option @value="en-US">en-US</xs.option>
     <xs.option @value="es-ES">es-ES</xs.option>
