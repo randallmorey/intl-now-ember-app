@@ -79,6 +79,11 @@ a
   top: 2rem
   strong
     font-size: 2rem
+  @include media-breakpoint-down(md)
+    max-width: 80%
+  @include media-breakpoint-down(lg)
+    strong
+      font-size: 1.5rem
 
 .site-footer
   background-color: #393E46
